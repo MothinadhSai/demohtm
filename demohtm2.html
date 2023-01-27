@@ -28,7 +28,8 @@
             <input type="checkbox" id="FullStack" name="FullStack" value="FullStack"/>  
             <label for="FullStack">FullStack</label> </br>
             <br><input " type="submit" value="Submit" onclick="handleSubmit()">  </br> 
-         </fieldset>  
+         </fieldset> 
+         <div id="resultData"></div> 
            
       <script>
          function handleSubmit() {
@@ -36,6 +37,12 @@
             var lName = document.getElementById("lasName").value;
             var userName = fName.toUpperCase() + ' ' + lName.toUpperCase();
             console.log('handle submit clicked', userName);
+            var result = document.getElementById("resultData");
+            if(fName && lName){
+               result.innerText = userName;
+            } else {
+               result.innerText = 'no data';
+            }
          }
       </script>
    </body>
